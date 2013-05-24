@@ -13,4 +13,26 @@ testModule.controller('CartController', function ($scope) {
 
 testModule.controller('FormController', function($scope){
 	$scope.flag = false;
+	$scope.updateMe = function(){
+		console.log($scope.flag);
+	};
 }); 
+
+testModule.controller('StartupController', function($scope){
+	$scope.funding = {
+		startingEstimate: 0,
+		needed: 0 
+	};
+
+	compute = function(){
+		$scope.funding.needed = 10 * $scope.funding.startingEstimate;
+	};
+
+	$scope.schedule = function(t){
+		
+		$scope.funding.startingEstimate = 10;
+		
+	};
+
+	$scope.$watch('funding.startingEstimate', compute);
+});

@@ -18,7 +18,17 @@
 				<fieldset>
 					<legend>Check Box
 					</legend>
-						<label>Check This: <input type="checkbox" ng-model="flag"></label>
+						<label>Check This: <input type="checkbox" ng-model="flag" ng-change="updateMe()">
+						</label>
+				</fieldset>
+			</form>
+		</div>
+		<div ng-controller="StartupController">
+			<form>
+				<fieldset><legend>Funding Requirements</legend>
+					Starting: <input ng-model="funding.startingEstimate">
+					<p ng-bind="funding.needed | currency"></p>
+					<button ng-click="schedule(1500)">Schedule</button>
 				</fieldset>
 			</form>
 		</div>
