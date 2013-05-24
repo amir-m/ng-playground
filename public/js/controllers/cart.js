@@ -10,3 +10,7 @@ testModule.controller('CartController', function ($scope) {
 		$scope.items.splice(index, 1);
 	};
 });
+
+testModule.controller('FormController', function($scope){
+	$scope.flag = false;
+}); 
