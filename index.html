@@ -5,10 +5,10 @@
 	<body ng-controller="CartController">
 		<h1>Order</h1>
 		<div ng-repeat="item in items">
-			<span>{{item.title}}</span>
+			<span ng-bind="item.title"></span>
 			<input ng-model="item.quantity">
-			<span>{{item.price | currency}}</span>
-			<span>{{item.price * item.quantity | currency}}</span>
+			<span ng-bind="item.price | currency"></span>
+			<span ng-bind="item.price * item.quantity | currency"></span>
 			<button ng-click="remove($index)">Remove</button>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
