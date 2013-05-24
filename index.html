@@ -1,12 +1,17 @@
 <html ng-app>
 	<head>
-		<script type="text/javascript" src="public/js/libs/angular.js"></script>
-		<script type="text/javascript" src="public/js/controllers/aController.js"></script>
+		<title>Shopping Cart</title>
 	</head>
-	<body>
-		<div ng-controller="aController">
-			<input ng-model='txt.msg'><br>
-			<p>The controller says: {{txt.msg}}</p>
+	<body ng-controller="CartController">
+		<h1>Order</h1>
+		<div ng-repeat="item in items">
+			<span>{{item.title}}</span>
+			<input ng-model="item.quantity">
+			<span>{{item.price | currency}}</span>
+			<span>{{item.price * item.quantity | currency}}</span>
+			<button ng-click="remove($index)">Remove</button>
 		</div>
+		<script type="text/javascript" src="public/js/libs/angular.js"></script>
+		<script type="text/javascript" src="public/js/controllers/cart.js"></script>
 	</body>
 </html>
