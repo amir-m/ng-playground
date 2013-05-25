@@ -47,6 +47,18 @@
 				Name: <input ng-model="tmpName"> Id: <input ng-model="tmpId"> <button ng-click="students.push({id: tmpId, name: tmpName});console.log(students);">Add</button></p>
 		</div>
 
+		<div ng-controller="TableController">
+			<button ng-click="toggle()">Toggle Table!</button>
+			<table>
+				<tr ng-repeat="row in table" ng-show="showTable">
+					<td ng-bind="$index + 1"></td>
+					<td ng-bind="row.artist"></td>
+					<td ng-bind="row.track"></td>
+				</tr>
+			</table>
+		</div>
+
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
 		<script type="text/javascript" src="public/js/controllers/cart.js"></script>
 	</body>

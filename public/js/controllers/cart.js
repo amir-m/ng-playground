@@ -48,3 +48,15 @@ testModule.controller('StudentController', function($scope){
 		{id: 3, name: 'Lisa'}
 	];
 });
+
+testModule.controller('TableController', function($scope){
+	$scope.showTable = false;
+	$scope.table = [
+		{artist: 'Bizzare Contact', track: 'Collision'},
+		{artist: 'Vibe Tribe', track: 'Beyond'},
+		{artist: 'Astrix', track: 'Acid Rocker'}
+	];
+	$scope.toggle = function() {
+		$scope.showTable = !$scope.showTable;
+	};
+});
