@@ -4,6 +4,7 @@
 	</head>
 	<body>
 		<h1>Order</h1>
+
 		<div ng-controller="CartController">
 			<div ng-repeat="item in items">
 				<span ng-bind="item.title"></span>
@@ -13,6 +14,7 @@
 				<button ng-click="remove($index)">Remove</button>
 			</div>
 		</div>
+
 		<div ng-controller="FormController">
 			<form>
 				<fieldset>
@@ -23,15 +25,28 @@
 				</fieldset>
 			</form>
 		</div>
+
 		<div ng-controller="StartupController">
-			<form>
+			<form ng-submit="submitMe()">
 				<fieldset><legend>Funding Requirements</legend>
 					Starting: <input ng-model="funding.startingEstimate">
 					<p ng-bind="funding.needed | currency"></p>
 					<button ng-click="schedule(1500)">Schedule</button>
 				</fieldset>
+				<fieldset>
+					<input type="submit" value="Fund Me!">
+				</fieldset>
 			</form>
 		</div>
+
+		<div ng-controller="StudentController">
+			<li ng-repeat="student in students">
+				<a href="/student/view/{{student.id}}">{{student.name}}</a>
+			</li>
+			<p>Add Student:<br>
+				Name: <input ng-model="tmpName"> Id: <input ng-model="tmpId"> <button ng-click="students.push({id: tmpId, name: tmpName});console.log(students);">Add</button></p>
+		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
 		<script type="text/javascript" src="public/js/controllers/cart.js"></script>
 	</body>

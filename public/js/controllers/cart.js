@@ -29,10 +29,22 @@ testModule.controller('StartupController', function($scope){
 	};
 
 	$scope.schedule = function(t){
-		
 		$scope.funding.startingEstimate = 10;
-		
 	};
 
-	$scope.$watch('funding.startingEstimate', compute);
+	$scope.submitMe = function(){
+		compute();
+		console.log('FUNDED :)');
+		return false;
+	}
+
+	// $scope.$watch('funding.startingEstimate', compute);
+});
+
+testModule.controller('StudentController', function($scope){
+	$scope.students = [
+		{id: 1, name: 'Amir'},
+		{id: 2, name: 'Kevin'},
+		{id: 3, name: 'Lisa'}
+	];
 });
