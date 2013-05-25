@@ -60,3 +60,15 @@ testModule.controller('TableController', function($scope){
 		$scope.showTable = !$scope.showTable;
 	};
 });
+
+testModule.controller('CSSTable', function($scope){
+	$scope.resturants = [
+		{cusine: 'Chinese', price: 'Low'}, 
+		{cusine: 'Mexican', price: 'Medium'}, 
+		{cusine: 'French', price: 'High'}
+	];
+
+	$scope.selectResturant = function(row){
+		$scope.selectedResturant = row;
+	};
+});
