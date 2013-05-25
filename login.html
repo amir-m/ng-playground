@@ -1,0 +1,72 @@
+<html ng-app="loginApp">
+	<head>
+		<title>Login</title>
+		<link href="public/css/bootstrap.css" rel="stylesheet">
+		<link href="public/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<style type="text/css">
+
+			#login {
+				top: 50%;
+				left: 50%;
+				width:30em;
+				height:34em;
+				margin-left: -15em; /*set to a negative number 1/2 of your width*/
+				margin-top: -17em; /*set to a negative number 1/2 of your height*/
+				border: 1px solid #ccc;
+				background-color: #f3f3f3;
+				position: relative;
+			}
+			#login .signInForm {
+				margin: 0;
+				position: absolute;
+				padding: 1em 4em 1em;
+			}
+			#login label {
+				display: block;
+				padding-left: 15px;
+				text-indent: -15px;
+			}
+			#login input[type=checkbox] {
+				width: 13px;
+				height: 13px;
+				padding: 0;
+				margin:0;
+				vertical-align: bottom;
+				position: relative;
+				top: 0px;
+				overflow: hidden;
+			}
+			#login input[type=text] {
+				width: 300px;
+				height: 28px;
+			}
+			</style>
+	</head>
+	<body>
+		<h1 style="margin-left:15em;padding:0; position:relative;">doob</h1>
+		<div id="login" ng-controller="LoginController">
+ 			<form class="signInForm">
+ 				<h3>I want to</h3>
+ 				<fieldset >
+ 					<legend>Sign In With My</legend>
+					<button class="btn btn-info btn-block" ng-click="facebook()">Facebook Account</button><br>
+					<button class="btn btn-warning btn-block" ng-click="soundcloud()">SoundCloud Account</button><br>
+					Email<br><input type="text"><br>
+					Password | <a href="" style="vertical-align:bottom">I forgot my password!</a><br><input type="text"><br>
+					<label>
+						<input type="submit" class="btn btn-success" value="Sign In" ng-click="signIn()"> 
+						<span style="vertical-align:bottom"><input type="checkbox" checked="checked"> Remember me</span>
+					</label>
+				</fieldset><br>
+				<fieldset>
+					<legend><a href="" ng-click="register()">Register As a New User</a></legend>
+			</fieldset>
+			</form>
+		</div>
+		<!-- 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+		-->
+		<script type="text/javascript" src="public/js/libs/angular.js"></script>
+		<script type="text/javascript" src="public/js/controllers/login.js"></script>
+	</body>
+<html>
