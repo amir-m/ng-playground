@@ -26,6 +26,9 @@
 				<span ng-bind="item.price * item.quantity | currency"></span>
 				<button ng-click="remove($index)">Remove</button>
 			</div>
+			<span>Total: <strong>{{total() | currency}}</strong></span><br>
+			<span>Discount: <strong>{{bill.discount | currency}}</strong></span><br>
+			<span>Subtotal: <strong>{{subTotal() | currency}}</strong></span><br>
 		</div>
 
 		<div ng-controller="FormController">

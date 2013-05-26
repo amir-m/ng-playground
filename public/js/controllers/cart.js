@@ -1,14 +1,32 @@
 var testModule = angular.module('cartApp', []);
 testModule.controller('CartController', function ($scope) {
+	$scope.bill = {discount: 0};
+
 	$scope.items = [
 		{title: 'Paint Pots', quantity: 8, price: 3.95},
 		{title: 'Podka Pots', quantity: 17, price: 12.95},
 		{title: 'Pebbles', quantity: 5, price: 6.95}
 	];
 
+	$scope.total = function(){
+		var t = 0;
+		for (var i = 0, l = $scope.items.length; i < l; i++) {
+			t += $scope.items[i].price * $scope.items[i].quantity;
+		};
+		return t;
+	};
+
+	$scope.subTotal = function(){
+		return $scope.total() - $scope.bill.discount;
+	};
+
 	$scope.remove = function(index){
 		$scope.items.splice(index, 1);
 	};
+
+	$scope.$watch($scope.total, function(newValue){
+		$scope.bill.discount = newValue > 100 ? 10 : 0;
+	});
 });
 
 testModule.controller('FormController', function($scope){
