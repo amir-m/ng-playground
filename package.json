@@ -1,0 +1,11 @@
+{
+	"name": "ng",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "~3.0.0",
+		"mongoose": ">= 2.8.1",
+		"nodemailer": ">= 0.3.0",
+		"connect": ">= 1.0.0"
+	}
+}
