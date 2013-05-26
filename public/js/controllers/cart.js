@@ -1,4 +1,11 @@
 var testModule = angular.module('cartApp', []);
+
+testModule.config(function($routeProvider){
+	$routeProvider.
+		when('/login', {controller: LoginController, templateUrl: '/public/views/templates/login'})
+		// otherwise()
+});
+
 testModule.controller('CartController', function ($scope) {
 	$scope.bill = {discount: 0};
 
